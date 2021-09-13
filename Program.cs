@@ -9,7 +9,9 @@ namespace AddressBookSystem
         {
             Console.WriteLine("Welcome to Address Book System");
             Contact.GetCustomer();
+            Contact.Modify();
             Contact.ListingPeople();
+            
             Console.ReadLine();
         }
     }
