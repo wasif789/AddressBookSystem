@@ -25,33 +25,38 @@ namespace AddressBookSystem
 
         public static void GetCustomer()
         {
-            Person person = new Person();
+            Console.WriteLine("Provide the number of entries you want to add:");
+            int n= Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                Person person = new Person();
 
-            Console.Write("Enter First Name: ");
-            person.FirstName = Console.ReadLine();
+                Console.Write("Enter First Name: ");
+                person.FirstName = Console.ReadLine();
 
-            Console.Write("Enter Last Name: ");
-            person.LastName = Console.ReadLine();
+                Console.Write("Enter Last Name: ");
+                person.LastName = Console.ReadLine();
 
-            Console.Write("Enter Address : ");
-            person.Addresses = Console.ReadLine();
+                Console.Write("Enter Address : ");
+                person.Addresses = Console.ReadLine();
 
-            Console.Write("Enter City : ");
-            person.City = Console.ReadLine();
+                Console.Write("Enter City : ");
+                person.City = Console.ReadLine();
 
-            Console.Write("Enter State : ");
-            person.State = Console.ReadLine();
+                Console.Write("Enter State : ");
+                person.State = Console.ReadLine();
 
-            Console.Write("Enter ZipCode: ");
-            person.ZipCode = Console.ReadLine();
+                Console.Write("Enter ZipCode: ");
+                person.ZipCode = Console.ReadLine();
 
-            Console.Write("Enter Phone Number: ");
-            person.PhoneNum = Console.ReadLine();
+                Console.Write("Enter Phone Number: ");
+                person.PhoneNum = Console.ReadLine();
 
-            Console.Write("Enter EmailId: ");
-            person.EmailId = Console.ReadLine();
+                Console.Write("Enter EmailId: ");
+                person.EmailId = Console.ReadLine();
 
-            People.Add(person);
+                People.Add(person);
+            }
         }
         public static void PrintCustomer(Person person)
         {
