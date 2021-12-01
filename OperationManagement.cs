@@ -37,6 +37,7 @@ namespace AddressBookSystem
                 Console.WriteLine("4.Edit Details");
                 Console.WriteLine("5.Delete the contact");
                 Console.WriteLine("6.Delete the address book");
+                Console.WriteLine("7.Display the person by city or state");
                 Console.WriteLine("0.Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -91,7 +92,7 @@ namespace AddressBookSystem
                             //calling edit contact method
                             book.EditContact(name, number);
                         }
-                        catch (NullReferenceException)
+                        catch (NullReferenceException e)
                         {
                             Console.WriteLine("No dictionary available");
                         }
@@ -122,7 +123,9 @@ namespace AddressBookSystem
                         string Name = Console.ReadLine();
                         addressDictionary.Remove(Name);
                         break;
-
+                    case 7:
+                        AddressBookCompute.DisplayPerson(addressDictionary);
+                        break;
                     case 0:
                         CONTINUE = false;
                         break;
@@ -161,7 +164,7 @@ namespace AddressBookSystem
                 Console.WriteLine("No Address book is available {0} ", aE.Message);
             }
             //catches when the user input the invalid data
-            catch (FormatException)
+            catch (FormatException e)
             {
                 Console.WriteLine("Detail entered is not in correct format");
             }
